@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nav bar</title>
+	<link type="text/css" rel="stylesheet" href="style/style_animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+	<link type="text/css" rel="stylesheet" href="style/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+</head>
+<body>
+
+	
+	<nav>
+		<ul>
+			<li id="home" onclick="play();"><a href="index.html">Home</a></li>
+			<li id="news" onclick="play();"><a href="#">News</a></li>
+			<li id="music" onclick="play();"><a href="#">Music</a></li>
+			<li id="poetry" onclick="play();"><a href="#">Poetry</a></li>
+			<li id="about" onclick="play();"><a href="#">About</a></li>
+			<li id="contact" onclick="play();"><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h1 class="animated flip">Noir Fatale - dark electronics</h1>
+	</header>
+	<audio id="audio">
+		<source id="source" src="flyby.wav" type="audio/wav" >
+	</audio>
+	<div class="container">
+		<div class="row">
+			<div id="side-left" class="col col-lg-6 col-sm-12">
+				<a href="#"> <img id="jafoto" src="img/ja.jpg" alt="zdjecie" title="Gallery"></a>
+
+				<form id="theform" id="gform" method="POST" action="handler.php">
+		            <div class="row1">
+		            <label for="name">Your name: </label><input id="name" type="text" name="name" required>
+		                </div><br><br>
+		            <div class="row1">
+		            <label for="mail">Your e-mail address: </label><input id="mail" type="mail" name="email" required>
+		            </div><br>
+		            <div class="row1">
+		            <label for="message">Your message: </label><textarea id="message"type="text" name="msg"></textarea>
+		        	</div>
+		            <div class="row1">
+		            <input id="submit" type="submit" name="submit" value="Sent Message">
+		            </div>
+        		</form>
+			</div>
+			<div class="col col-lg-6 col-sm-12" >
+				<div class="inner">
+		           
+		            <p id="lyrics">I've found myself at the lonely aley</p>
+		            <p id="lyrics">In the shine of the moon</p>
+		            <p id="lyrics">At the wind-blow solos</p>
+		            <p id="lyrics">Where future took the wrong turn</p>
+		            <p id="lyrics">Covered with the dust of guilt</p>
+		            <p id="lyrics">Drown in the puke of sorrows</p> 
+		            <p id="lyrics">With things which haven't been done</p>
+		            <p id="lyrics">The hopes you lost for ever.</p>
+		            <p id="lyrics">Dying slowly, every day, closer...</p>
+		        </div>
+				
+		        
+			</div>
+		</div>
+		<div class="row">
+			<div id="right2" class="col col-lg-6 col-sm-6">
+				<div class="icon"><a href="https://soundcloud.com/micha-antczak-329856988"><img style="width:100px; height:100px;"src="img/Soundcloud-icon.png"alt="icon" /></a></div>
+			</div>
+			<div id="right3" class="col col-lg-6">
+				<div class="icon"><a href="https://soundcloud.com/micha-antczak-329856988"><img style="width:100px; height:100px;"src="img/facebook.png"alt="icon" /></a></div>
+			</div>
+		</div>
+		<div id="foot" class="col col-lg-12 col-sm-12">
+			 <p>&copy; 2018 Noir Fatale, Michal Antczak.  All Rights Reserved</p>
+		</div>
+
+
+	</div>
+
+
+	<script>
+		var audio = document.getElementById("audio");
+		var sound = document.getElementById("source");
+		function play() {
+			audio.load();
+    		audio.play();
+			}
+		var contact=document.querySelector("#contact");
+		contact.addEventListener("click",function(){
+		var foto = document.querySelector("#jafoto");
+		foto.style.display="none";
+		var theForm=document.querySelector("#theform");
+		theForm.style.display="table";
+		var row1S=document.querySelectorAll(".row1");
+		for(var i =0; i<row1S.length;i++){
+			row1S[i].style.display="table-row";
+		}
+		var labelS=document.querySelectorAll(".row1 label");
+		for(var i =0; i<labelS.length;i++){
+			labelS[i].style.display="table-cell";
+		}
+		var inputName=document.querySelector(".row1>#name");
+		inputName.style.display="table-cell";
+		var inputMail=document.querySelector(".row1>#mail");
+		inputMail.style.display="table-cell";
+		var textArea=document.querySelector(".row1>textarea");
+		textArea.style.display="table-cell";
+		var submitButton=document.querySelector("#submit");
+		submitButton.style.display="inline-block";
+		});
+
+	</script>
+
+</body>
+</html>

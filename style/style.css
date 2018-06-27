@@ -1,0 +1,237 @@
+@font-face {
+    font-family:"YouMurderer";
+    src: url("../YouMurdererBB.woff");
+}
+html{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-image: url("../img/nebula.gif");
+	background-size: 100% 100%;
+	/*background-repeat: no-repeat*/;
+	
+}
+header{
+	display:flex;
+	width:100%;
+	margin-bottom: 10px;
+
+}
+audio{
+	display:none;
+}
+
+h1{
+	margin:0px 0px;
+	flex:1 1 200px;
+	color:#8A0707;
+	font-family: "YouMurderer";
+	font-weight: 600;
+	font-size:2.5em;
+	text-align: center;
+	font-size:400%;
+}
+nav{
+	
+}
+
+ul{
+	
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	box-shadow: -2px -2px 2px silver;
+	background-color: rgba(129,129,129,0.1);
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-left: 0px;
+
+
+
+}
+li{ 
+
+	flex: 1 1 40px;
+
+	margin:10px;
+	padding: 2px 0px;
+	list-style: none;
+	text-align: center;
+
+	border:1px solid ;
+	border-color: rgba(255,0,0,0.2);
+	background-color:rgba(255,0,0,0.4);
+	transition: all 0.1s;
+}
+li:hover{
+	transform: scale(1.1);
+	border-color:rgba(255,0,0,0.6);
+	background-color:rgba(255,0,0,0.2);
+	box-shadow: -2px 2px 2px #888888;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+
+}
+.container{
+	/*display:grid;
+	grid-template-columns: auto auto auto;
+	
+	height:100%;*/
+	grid-gap: 10px;
+	border:2px solid black;
+	padding:10px;
+	background-color: rgba(129,129,129,0.1);
+
+
+}
+
+#side-left{
+	/*grid-row-start: 1;
+	grid-row-end: 3;*/
+	background: url("../img/background.jpg")no-repeat center ;
+	
+    background-size: cover;
+    border-radius: 5px;
+
+}
+.icon{
+	text-align: center;
+}
+.icon>img{
+	width:100px; 
+	height:100px;
+	
+}
+#right1{
+	/*grid-row-start: 1;
+	grid-row-end: 3;
+	grid-column-start: 2;
+	grid-column-end: 4;*/
+}
+.music {
+    
+    
+    margin-top:0;
+    border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+    /*overflow-y: scroll;*/
+    
+}
+.inner {
+    background: url("../img/red2.jpg") no-repeat center ;
+    background-size: cover;
+    border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+    
+    margin:10px;
+    
+    
+}
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#jafoto {
+    margin-left: 20px;
+    opacity:1.0;
+}
+#jafoto:hover {
+    opacity:0.5;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+#lyrics { 
+    margin:20px;
+    font-family: 'Marck Script', cursive;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+    color: snow;
+    
+  background: -webkit-gradient(
+    linear, left top, left bottom,
+    from(#fff), color-stop(50%, #777), color-stop(50%, #666), to(red));
+  background: -webkit-linear-gradient(top, #e60000, #ff3333 50%, #ff6666 50%, snow);
+  background:         linear-gradient(top, #fff, #777 50%, #666 50%, #111);
+    -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+    
+    
+}
+#foot {
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: snow;
+    
+    /* ==============this below is to verticaly center the txt area inide div element
+    position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);*/
+    
+}
+/*======================================FORM==========================================*/
+#theform {
+    display:none;/*table*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px 0px;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 14px;
+    color:snow;
+    background-image: url(../img/rain.jpg);
+    background-size: cover;
+     border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+    
+}
+.row1 {
+    display:none;/*table-row*/
+    
+}
+.row1 label {
+    
+    padding:0px;
+    display:none;/*table-cell*/
+    text-align: right;
+}
+.row1 input {
+     border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+    padding:0px;
+    display:none;/*table-cell*/
+    margin:10px 0px;
+}
+.row1 textarea {
+   border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+    padding:10px;
+    display:none;/*table-cell*/
+    width:170px;
+    height:100px;
+    margin:5px;
+}
+#submit {
+    background-color: #aebafd;
+    color:black;
+    float:right;
+    display:none;
+    
+}
