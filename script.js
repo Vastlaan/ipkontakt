@@ -111,8 +111,8 @@ function passSource(para){
 /*Handling Contact button*/
 var contact=document.querySelector("#contact");
 contact.addEventListener("click",function(){
-	audioPlayer.style.display='none';
 	audioPlayer2.style.display='none';
+	audioPlayer.style.display='none';
 	var foto = document.querySelector("#jafoto");
 	foto.style.display="none";
 	var theForm=document.querySelector("#theform");
