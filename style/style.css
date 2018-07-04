@@ -9,6 +9,9 @@ html{
 body{
 	background-image: url("../img/nebula.gif");
 	background-size: 100% 100%;
+	border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
 	/*background-repeat: no-repeat*/;
 	
 }
@@ -38,9 +41,8 @@ nav{
 
 ul{
 	
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	box-shadow: -2px -2px 2px silver;
+	
+	/*box-shadow: -2px -2px 2px silver;*/
 	background-color: rgba(129,129,129,0.1);
 	display:flex;
 	flex-direction: row;
@@ -82,7 +84,9 @@ a{
 	
 	height:100%;*/
 	grid-gap: 10px;
-	border:2px solid black;
+	border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
 	padding:10px;
 	background-color: rgba(129,129,129,0.1);
 
@@ -101,11 +105,7 @@ a{
 .icon{
 	text-align: center;
 }
-.icon>img{
-	width:100px; 
-	height:100px;
-	
-}
+
 #right1{
 	/*grid-row-start: 1;
 	grid-row-end: 3;
@@ -205,18 +205,19 @@ a{
     
 }
 .row1 label {
-    
+    margin-right: 5px;
     padding:0px;
     display:none;/*table-cell*/
     text-align: right;
 }
 .row1 input {
+	height:35px;
      border: 1px silver;
     border-radius: 5px;
     box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
     padding:0px;
     display:none;/*table-cell*/
-    margin:10px 0px;
+    margin:10px 3px;
 }
 .row1 textarea {
    border: 1px silver;
@@ -234,4 +235,76 @@ a{
     float:right;
     display:none;
     
+}
+/*=====================================PLAYER===========================================*/
+#audioPlayer{
+	display:none;/*block*/
+}
+#audioPlayer2{
+	display:none;/*block*/
+}
+.item1{
+	font-family:"YouMurderer";
+    font-size: 60px;
+    color:red;
+    margin: 0px auto;
+    padding: 10px 0;
+	text-align: center;
+	grid-area: header;
+}
+.item2{
+	grid-area: occulta;
+}
+.item3{
+	grid-area:album;
+	font-family:"YouMurderer";
+	font-size: 1.5em;
+	font-stretch: ultra-expanded;
+	color: red;
+}
+.item4{
+	grid-area: playBut;
+}
+.item5{
+	grid-area:stopBut;
+}
+.item6{
+	grid-area:backwardButton;
+}
+.item7{
+	grid-area:forwardButton;
+}
+.player{
+	clear:both;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-areas: 
+	'header header header header header header'
+	'occulta occulta album album album album '
+	'occulta occulta playBut playBut stopBut stopBut'
+	'occulta occulta backwardButton BackwardButton forwardButton forwardButton';
+	padding:10px;
+	margin:10px;
+	border: 1px silver;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+	
+}
+button{
+	background-color: rgba(255,0,0,.4);
+	border: 2px solid rgba(255,0,0,.4);
+	border-radius:5px;
+	box-shadow: 2px 2px 2px #888888;
+	width:70px;
+	height:35px;
+	font-family: Arial;
+}
+button:hover{
+	cursor: pointer;
+}
+.listOfSongs{
+	flex-direction: column;
+}
+.listOfSongs>li:hover{
+	cursor:pointer;
 }

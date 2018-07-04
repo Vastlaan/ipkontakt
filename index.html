@@ -13,12 +13,12 @@
 	
 	<nav>
 		<ul>
-			<li id="home" onclick="play();"><a href="index.html">Home</a></li>
-			<li id="news" onclick="play();"><a href="#">News</a></li>
-			<li id="music" onclick="play();"><a href="#">Music</a></li>
-			<li id="poetry" onclick="play();"><a href="#">Poetry</a></li>
-			<li id="about" onclick="play();"><a href="#">About</a></li>
-			<li id="contact" onclick="play();"><a href="#">Contact</a></li>
+			<li id="home" onclick="playF();"><a href="index.html">Home</a></li>
+			<li id="news" onclick="playF();"><a href="#">News</a></li>
+			<li id="music" onclick="playF();"><a href="#">Music</a></li>
+			<li id="poetry" onclick="playF();"><a href="#">Poetry</a></li>
+			<li id="about" onclick="playF();"><a href="#">About</a></li>
+			<li id="contact" onclick="playF();"><a href="#">Contact</a></li>
 		</ul>
 	</nav>
 	<header>
@@ -28,6 +28,47 @@
 		<source id="source" src="flyby.wav" type="audio/wav" >
 	</audio>
 	<div class="container">
+		<div class="row">
+			<div class="col col-lg-6 col-sm-12" id="audioPlayer">
+				<div class="player">
+				 	<div class="item1">
+				 		Autumn
+				 	</div>
+				 	<div class="item2">
+				 		<img src="player/occulta.jpg" id="occulta">
+				 	</div>
+				 	<div class="item3">
+				 		Noir Fatale: Autumn
+				 	</div>
+				 	<div class="item4">
+				 		<button class="play">Play</button>
+				 	</div>
+				 	<div class="item5">
+				 		<button class="stop">Stop</button>
+				 	</div>
+				 	<div class="item6">
+				 		<button class="backward">Backward</button>
+				 	</div>
+				 	<div class="item7">
+				 		<button class="forward">Forward</button>
+				 	</div>
+				 	
+				</div>
+					<div>
+						<ul class="listOfSongs">
+							<li class="autumn" src="player/audio/noir fatale - autumn.mp3">Noir Fatale - Autumn</li>
+							<li class="tender" src="player/audio/Noir fatale - Tender suicide.mp3">Noir Fatale - Tender Suicide</li>
+							<li class="mefedron" src="player/audio/Noir fatale - Mefedron lake.mp3"">Noir Fatale - Mefedron lake</li>
+							<li class="ethnic" src="player/audio/Noir fatale - Ethnic techno.mp3"">Noir Fatale - Ethnic techno</li>
+						</ul>
+					</div>
+			</div>
+			<div class="col col-lg-6 col-sm-12" id="audioPlayer2">
+				<video id="video">
+					<source src="player/videoplayback.webm" type="video/webm">
+				</video>
+			</div>
+		</div>
 		<div class="row">
 			<div id="side-left" class="col col-lg-6 col-sm-12">
 				<a href="#"> <img id="jafoto" src="img/ja.jpg" alt="zdjecie" title="Gallery"></a>
@@ -69,9 +110,10 @@
 				<div class="icon"><a href="https://soundcloud.com/micha-antczak-329856988"><img style="width:100px; height:100px;"src="img/Soundcloud-icon.png"alt="icon" /></a></div>
 			</div>
 			<div id="right3" class="col col-lg-6">
-				<div class="icon"><a href="https://soundcloud.com/micha-antczak-329856988"><img style="width:100px; height:100px;"src="img/facebook.png"alt="icon" /></a></div>
+				<div class="icon"><a href="#"><img style="width:80px; height:100px;"src="img/facebook.png"alt="icon" /></a></div>
 			</div>
 		</div>
+		
 		<div id="foot" class="col col-lg-12 col-sm-12">
 			 <p>&copy; 2018 Noir Fatale, Michal Antczak.  All Rights Reserved</p>
 		</div>
@@ -80,38 +122,7 @@
 	</div>
 
 
-	<script>
-		var audio = document.getElementById("audio");
-		var sound = document.getElementById("source");
-		function play() {
-			audio.load();
-    		audio.play();
-			}
-		var contact=document.querySelector("#contact");
-		contact.addEventListener("click",function(){
-		var foto = document.querySelector("#jafoto");
-		foto.style.display="none";
-		var theForm=document.querySelector("#theform");
-		theForm.style.display="table";
-		var row1S=document.querySelectorAll(".row1");
-		for(var i =0; i<row1S.length;i++){
-			row1S[i].style.display="table-row";
-		}
-		var labelS=document.querySelectorAll(".row1 label");
-		for(var i =0; i<labelS.length;i++){
-			labelS[i].style.display="table-cell";
-		}
-		var inputName=document.querySelector(".row1>#name");
-		inputName.style.display="table-cell";
-		var inputMail=document.querySelector(".row1>#mail");
-		inputMail.style.display="table-cell";
-		var textArea=document.querySelector(".row1>textarea");
-		textArea.style.display="table-cell";
-		var submitButton=document.querySelector("#submit");
-		submitButton.style.display="inline-block";
-		});
-
-	</script>
+	<script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
