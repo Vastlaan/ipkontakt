@@ -142,4 +142,9 @@ music.addEventListener('click', function(){
 	audioPlayer.style.display='block';
 	audioPlayer2.style.display='block';
 });	
+//Handling Home Button
+const home = document.querySelector("#home");
+home.addEventListener('click', function(){
+	window.location.reload();
+})
 

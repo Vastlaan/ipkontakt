@@ -10,23 +10,26 @@
 </head>
 <body>
 
-	
-	<nav>
-		<ul>
-			<li id="home" onclick="playF();"><a href="index.html">Home</a></li>
-			<li id="news" onclick="playF();"><a href="#">News</a></li>
-			<li id="music" onclick="playF();"><a href="#">Music</a></li>
-			<li id="poetry" onclick="playF();"><a href="#">Poetry</a></li>
-			<li id="about" onclick="playF();"><a href="#">About</a></li>
-			<li id="contact" onclick="playF();"><a href="#">Contact</a></li>
-		</ul>
-	</nav>
 	<header>
-		<h1 class="animated flip">Noir Fatale - dark electronics</h1>
+		<h1 >Noir Fatale - dark electronics</h1>
 	</header>
 	<audio id="audio">
 		<source id="source" src="flyby.wav" type="audio/wav" >
 	</audio>
+	<nav>
+		<div class="aroundMenu" >
+			<div id="home" class="animated infinite pulse"   onclick="playF();"><span>Home</span>
+			</div>
+			<div id="music" class="animated infinite pulse" onclick="playF();"><span>Music</span>
+			</div>
+			<div id="poetry" class="animated infinite pulse" onclick="playF();"><span>Poetry</span>
+			</div>
+			<div id="contact" class="animated infinite pulse" onclick="playF();"><span>Contact</span>
+			</div>
+		</div>
+		
+	</nav>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col col-lg-6 col-sm-12" id="audioPlayer">

@@ -19,6 +19,8 @@ header{
 	display:flex;
 	width:100%;
 	margin-bottom: 10px;
+	background: url(../img/chain.png);
+	background-size:100% 100%;
 
 }
 audio{
@@ -28,7 +30,7 @@ audio{
 h1{
 	margin:0px 0px;
 	flex:1 1 200px;
-	color:#8A0707;
+	color:black;
 	font-family: "YouMurderer";
 	font-weight: 600;
 	font-size:2.5em;
@@ -319,4 +321,38 @@ button:hover{
 	
 	width: 300px; 
     height: 200px;
+}
+.aroundMenu{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	
+
+}
+
+.animated{
+	width:100px;
+	height:100px;
+	margin:20px 10px;
+	border-radius: 50px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.5)), url("../img/rain.jpg");
+	/*background-image: url('../img/butback.png');*/
+	background-size: 100% 100%;
+}
+.animated:hover{
+	cursor:pointer;
+}
+
+.animated>span{
+	font-family:"YouMurderer";
+	font-size:1.8em;
+}
+#home, #poetry{
+	margin-top:0px;
+}
+#music, #contact{
+	margin-bottom:0px;
 }
