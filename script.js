@@ -11,18 +11,12 @@ var video = document.querySelector('#video');
 
 //Functions Declaration
 
-//play video
-function playVideo(){
-	video.play();
-}
-function stopVideo(){
-	video.pause();
-}
+
 //Play current audio track
 function play() {
 	audio.load();
 	audio.play();
-	playVideo();
+	
 	}
 //Play flyby on click of one of the top navigation buttons
 function playF() {
@@ -33,7 +27,17 @@ function playF() {
 //Stop playing audio
 function stop(){
 	audio.pause();
-	stopVideo();
+	
+}
+//
+function highlight(){
+	for( let i = 0 ; i<listOfSongs.length; i++){
+		if(sound.getAttribute('src')===listOfSongs[i].getAttribute('src')){
+			listOfSongs[i].style.background='rgba(255,0,0,0.7)';
+		}else{
+			listOfSongs[i].style.background='rgba(255,0,0,0.2)';
+		}
+	}
 }
 //Function determine what's gonna happen after click on the forward button by audio player
 //This function is related to addEventListener on 'forward' button
@@ -62,13 +66,7 @@ function forward(){
 			
 		}
 	}
-	for( let i = 0 ; i<listOfSongs.length; i++){
-		if(sound.getAttribute('src')===listOfSongs[i].getAttribute('src')){
-			listOfSongs[i].style.background='rgba(255,0,0,0.7)';
-		}else{
-			listOfSongs[i].style.background='rgba(255,0,0,0.2)';
-		}
-	}
+	highlight();
 
 }
 // Function determines whats happen after clicking 'play' button
@@ -147,4 +145,30 @@ const home = document.querySelector("#home");
 home.addEventListener('click', function(){
 	window.location.reload();
 })
-
+//Handling playlist songs buttons
+listOfSongs.forEach((li)=>{
+li.addEventListener("click",()=>{
+	stop();
+	const passedSrc = li.getAttribute('src');
+	const getClass = li.getAttribute('class');
+	sound.setAttribute('src',passedSrc);
+	highlight();
+	play();
+	const text="";
+	switch(getClass){
+		case "autumn":
+		nameOfSong.textContent="Noir Fatale - Autumn";
+		break;
+		case "tender":
+		nameOfSong.textContent="Noir Fatale - Tender Suicide";
+		break;
+		case "mefedron":
+		nameOfSong.textContent="Noir Fatale - Mefedron lake";
+		break;
+		case "ethnic":
+		nameOfSong.textContent="Noir Fatale - Ethnic techno";
+		break;
+	}
+	
+});
+});

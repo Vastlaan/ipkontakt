@@ -7,11 +7,9 @@ html{
 	padding:0px;
 }
 body{
-	background-image: url("../img/nebula.gif");
-	background-size: 100% 100%;
-	border: 1px silver;
-    border-radius: 5px;
-    box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
+	
+	
+    background-color: #FF933A;
 	/*background-repeat: no-repeat*/;
 	
 }
@@ -85,6 +83,8 @@ a{
 	grid-template-columns: auto auto auto;
 	
 	height:100%;*/
+	background-image: url("../img/nebula.gif");
+	background-size: 100% 100%;
 	grid-gap: 10px;
 	border: 1px silver;
     border-radius: 5px;
@@ -284,7 +284,8 @@ a{
 	'header header header header header header'
 	'occulta occulta album album album album '
 	'occulta occulta playBut playBut stopBut stopBut'
-	'occulta occulta backwardButton BackwardButton forwardButton forwardButton';
+	'occulta occulta . forwardButton forwardButton .';
+
 	padding:10px;
 	margin:10px;
 	border: 1px silver;
@@ -325,25 +326,28 @@ button:hover{
 .aroundMenu{
 	display:flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-around;
 	
 
 }
 
 .animated{
 	width:100px;
-	height:100px;
+	height:30px;
 	margin:20px 10px;
-	border-radius: 50px;
+	border-radius: 20px;
 	display:flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(rgba(0,0,0,.5), rgba(255,255,255,.5)), url("../img/rain.jpg");
+	background-color: rgba(234,106,0,.6);
+	/*background: linear-gradient(rgba(120,0,120,.5), rgba(255,0,0,.5)), url("../img/rain.jpg");
 	/*background-image: url('../img/butback.png');*/
 	background-size: 100% 100%;
+
 }
 .animated:hover{
 	cursor:pointer;
+	animation-name: rotation;
 }
 
 .animated>span{
@@ -354,5 +358,5 @@ button:hover{
 	margin-top:0px;
 }
 #music, #contact{
-	margin-bottom:0px;
+	margin-top:0px;
 }
