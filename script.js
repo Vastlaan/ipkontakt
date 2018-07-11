@@ -8,7 +8,10 @@ var stopButton = document.querySelector(".stop");
 var forwardButton = document.querySelector(".forward");
 var nameOfSong= document.querySelector(".item3");
 var video = document.querySelector('#video');
-
+const poetrySheet = document.querySelectorAll("#poetrySheet>div");
+const poetry = document.querySelector("#poetrySheet");
+const sideLeft = document.querySelector('#side-left');
+const innerPoetry =document.querySelector('.inner');
 //Functions Declaration
 
 
@@ -29,7 +32,7 @@ function stop(){
 	audio.pause();
 	
 }
-//
+// this highlight current playing song on a list of songs
 function highlight(){
 	for( let i = 0 ; i<listOfSongs.length; i++){
 		if(sound.getAttribute('src')===listOfSongs[i].getAttribute('src')){
@@ -87,6 +90,30 @@ function playOn(){
 	
 	play();	
 }
+//===========FUNCTION SLIDE====================
+function slideR(){
+	let index = 0;
+	for(let i=0;i<poetrySheet.length;i++){
+		if(poetrySheet[i].style.display==='block'){
+	       	poetrySheet[i].style.display='none';
+			index=i+1;
+			}
+	}
+	if(index>=poetrySheet.length){index=0};
+	poetrySheet[index].style.display='block';
+}
+function slideL(){
+	let index = 0;
+	for(let i=0;i<poetrySheet.length;i++){
+		if(poetrySheet[i].style.display==='block'){
+	       	poetrySheet[i].style.display='none';
+			index=i-1;
+			}
+	}
+	if(index<0){index=poetrySheet.length-1};
+	poetrySheet[index].style.display='block';
+}
+//=================================Events adding
 
 forwardButton.addEventListener("click",forward);
 
@@ -94,21 +121,13 @@ playButton.addEventListener("click",playOn);
 
 stopButton.addEventListener("click",stop);
 
-//Handling passing song source to the player on click of song from the list
-/*
-	listOfSongs[0].addEventListener("click",function(){
-		var para = listOfSongs[0].getAttribute('src');
-		passSource(para);
-})
-;
-function passSource(para){
-		sound.setAttribute('src',para);
-		
-	}
-*/
+
 /*Handling Contact button*/
 var contact=document.querySelector("#contact");
 contact.addEventListener("click",function(){
+	innerPoetry.style.display='block';
+	sideLeft.style.display='block';
+	poetry.style.display="none";
 	audioPlayer2.style.display='none';
 	audioPlayer.style.display='none';
 	var foto = document.querySelector("#jafoto");
@@ -136,7 +155,11 @@ contact.addEventListener("click",function(){
 var music = document.querySelector('#music');
 var audioPlayer = document.querySelector('#audioPlayer');
 var audioPlayer2 = document.querySelector("#audioPlayer2");
+
 music.addEventListener('click', function(){
+	sideLeft.style.display='none';
+	poetry.style.display="none";
+	innerPoetry.style.display='none';
 	audioPlayer.style.display='block';
 	audioPlayer2.style.display='block';
 });	
@@ -144,6 +167,17 @@ music.addEventListener('click', function(){
 const home = document.querySelector("#home");
 home.addEventListener('click', function(){
 	window.location.reload();
+})
+//Handling Poetry button
+
+const poetryButton = document.querySelector("#poetry");
+poetryButton.addEventListener("click",function(){
+	innerPoetry.style.display='none';
+	sideLeft.style.display='none';
+	audioPlayer2.style.display='none';
+	audioPlayer.style.display='none';
+	poetry.style.display="flex";
+	slideR();
 })
 //Handling playlist songs buttons
 listOfSongs.forEach((li)=>{
@@ -172,3 +206,10 @@ li.addEventListener("click",()=>{
 	
 });
 });
+//Handling Poetry Slide
+
+const buttonRight = document.querySelector("#button-right");
+buttonRight.addEventListener('click',slideR);
+const buttonLeft = document.querySelector('#button-left');
+buttonLeft.addEventListener('click',slideL)
+
