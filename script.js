@@ -196,8 +196,32 @@ li.addEventListener("click",()=>{
 		case "tender":
 		nameOfSong.textContent="Noir Fatale - Tender Suicide";
 		break;
+		case "born":
+		nameOfSong.textContent="Noir Fatale - Born to die";
+		break;
+		case "romance":
+		nameOfSong.textContent="Noir Fatale - Romance with nature";
+		break;
+		case "pray":
+		nameOfSong.textContent="Noir Fatale - Pray to the Glory (W)hole";
+		break;
+		case "radion":
+		nameOfSong.textContent="Noir Fatale - Radion";
+		break;
+		case "serenity":
+		nameOfSong.textContent="Noir Fatale - Serenity of the raising sun";
+		break;
+		case "universe":
+		nameOfSong.textContent="Noir Fatale - We are the Universe";
+		break;
 		case "mefedron":
 		nameOfSong.textContent="Noir Fatale - Mefedron lake";
+		break;
+		case "anthem":
+		nameOfSong.textContent="Noir Fatale - Anthem of the Ancestors";
+		break;
+		case "master":
+		nameOfSong.textContent="Noir Fatale - Master your lusts";
 		break;
 		case "ethnic":
 		nameOfSong.textContent="Noir Fatale - Ethnic techno";

@@ -1,3 +1,23 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #FF8080; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F40000; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 @font-face {
     font-family:"YouMurderer";
     src: url("../YouMurdererBB.woff");
@@ -284,7 +304,7 @@ a{
 	'header header header header header header'
 	'occulta occulta album album album album '
 	'occulta occulta playBut playBut stopBut stopBut'
-	'occulta occulta . forwardButton forwardButton .';
+	'occulta occulta . . forwardButton forwardButton';
 
 	padding:10px;
 	margin:10px;
@@ -307,6 +327,10 @@ button:hover{
 }
 .listOfSongs{
 	flex-direction: column;
+	flex-wrap: nowrap;
+	height:300px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .listOfSongs>li:hover{
 	cursor:pointer;
@@ -375,7 +399,8 @@ button:hover{
 .ppp{
 	background-image:url(../img/moth.jpg) ;
 	background-size: 100% 100%;
-
+	height:400px;
+	overflow-y: scroll;
 	border: 1px silver;
     border-radius: 5px;
     box-shadow: inset 0 1px 10px 1px silver, 0px 1px 0 #8A9, 0 0px 0px #8A8, 0px 10px 25px rgba(0,0,0,.7);
