@@ -161,7 +161,7 @@ music.addEventListener('click', function(){
 	poetry.style.display="none";
 	innerPoetry.style.display='none';
 	audioPlayer.style.display='block';
-	audioPlayer2.style.display='block';
+	audioPlayer2.style.display='flex';
 });	
 //Handling Home Button
 const home = document.querySelector("#home");
@@ -237,3 +237,64 @@ buttonRight.addEventListener('click',slideR);
 const buttonLeft = document.querySelector('#button-left');
 buttonLeft.addEventListener('click',slideL)
 
+//Handling CLOCK
+const clock = document.querySelector('.clock');
+function getCurrentTime(){
+	let currentAudioTime = audio.currentTime;
+	currentAudioTime=currentAudioTime.toFixed(0);
+	
+	if(currentAudioTime==1){
+		currentAudioTime=0;
+	}
+
+	return currentAudioTime;
+}
+function handleTimeDisplay(fun){
+	let result=`${fun}`;
+	if(fun>=60&&fun<70){
+		fun=fun-60;
+		result=`1:0${fun}`
+	}
+	if(fun>=70&&fun<120){
+		fun=fun-60;
+		result=`1:${fun}`
+	}
+	if(fun>=120&&fun<130){
+		fun=fun-120;
+		result=`2:0${fun}`
+	}
+	if(fun>=130&&fun<180){
+		fun=fun-120;
+		result=`2:${fun}`
+	}
+	if(fun>=180&&fun<190){
+		fun=fun-180;
+		result=`3:0${fun}`
+	}
+	if(fun>=190&&fun<240){
+		fun=fun-180;
+		result=`3:${fun}`
+	}
+	if(fun>=240&&fun<250){
+		fun=fun-240;
+		result=`4:0${fun}`
+	}
+	if(fun>=250&&fun<300){
+		fun=fun-240;
+		result=`4:${fun}`
+	}
+	if(fun>=300&&fun<310){
+		fun=fun-300;
+		result=`5:0${fun}`
+	}
+	if(fun>=310&&fun<360){
+		fun=fun-300;
+		result=`5:0${fun}`
+	}
+	return result
+}
+ 
+ 
+ clock.innerText = getCurrentTime();
+ setInterval(()=>clock.innerText=handleTimeDisplay(getCurrentTime()),1000);
+//ANIMATION ROTATE!!!
