@@ -421,6 +421,7 @@ button:hover{
 	display:none;/*block*/
 	justify-content: center;
 	align-items: center;
+	overflow:hidden;
 }
 @keyframes clockR {
 	0%   {border-radius:300px 300px 300px 300px; transform: rotate(0deg);background-color:rgba(0,0,255,.2);}
