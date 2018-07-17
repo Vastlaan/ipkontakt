@@ -289,10 +289,13 @@ a{
 	grid-area:stopBut;
 }
 .item6{
-	grid-area:backwardButton;
+	grid-area:pause;
 }
 .item7{
 	grid-area:forwardButton;
+}
+#railbox{
+	
 }
 .player{
 	clear:both;
@@ -302,7 +305,8 @@ a{
 	'header header header header header header'
 	'occulta occulta album album album album '
 	'occulta occulta playBut playBut stopBut stopBut'
-	'occulta occulta . . forwardButton forwardButton';
+	'occulta occulta pause pause forwardButton forwardButton'
+	;
 
 	padding:10px;
 	margin:10px;
@@ -422,6 +426,10 @@ button:hover{
 	justify-content: center;
 	align-items: center;
 	overflow:hidden;
+	position:relative;
+}
+#rela{
+	position:relative;
 }
 @keyframes clockR {
 	0%   {border-radius:300px 300px 300px 300px; transform: rotate(0deg);background-color:rgba(0,0,255,.2);}
@@ -475,11 +483,14 @@ button:hover{
    			animation-iteration-count: infinite;
    			animation-timing-function: linear;
 		}
-#tmc>p{
+#rela>p{
 	font-size: 5em;
-	animation-name: clockChild;
+	position:absolute;
+	top:20px;
+	right:80px;
+	/*animation-name: clockChild;
     animation-duration: 4s;
    	animation-iteration-count: infinite;
-   	animation-timing-function: linear;
+   	animation-timing-function: linear;*/
 
 		}

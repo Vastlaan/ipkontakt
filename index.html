@@ -49,12 +49,20 @@
 				 	<div class="item5">
 				 		<button class="stop">Stop</button>
 				 	</div>
+				 	<div class="item6">
+				 		<button class="pause">Pause</button>
+				 	</div>
 				 	
 				 	<div class="item7">
 				 		<button class="forward">Forward</button>
 				 	</div>
 				 	
+				 	
 				</div>
+				<svg id="railbox" onclick=moveToPosition(event) width="300" height="30">
+						<rect id='rail' width="280" height="4"  y="10" x="5" style="fill:red;fill-opacity:0.2;"/>
+						<rect id="rect" width="5" class="draggable" height="24" y="2" x="5" style="fill:black; border-radius: 10px;"/>
+					</svg>
 					<div>
 						<ul class="listOfSongs">
 							<li class="autumn" src="player/audio/noir fatale - autumn.mp3">Noir Fatale - Autumn</li>
@@ -73,10 +81,15 @@
 					</div>
 			</div>
 			<div class="col-12 col-lg-6 col-md-12 col-sm-12" id="audioPlayer2">
-				<div id="timer">
-					<div id="tmc">
-						<p class="clock">
-						</p>
+				
+				<div id="rela">
+					<p class="clock">
+							</p>
+					<div id="timer">
+						<div id="tmc">
+							<p class="clock">
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

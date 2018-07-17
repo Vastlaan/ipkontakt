@@ -1,10 +1,11 @@
 //Variables Declaration
-
+var CURRENT = 0;
 var audio = document.getElementById("audio");
 var sound = document.getElementById("source");
 var listOfSongs = document.querySelectorAll(".listOfSongs>li");
 var playButton = document.querySelector(".play");
 var stopButton = document.querySelector(".stop");
+var pauseButton = document.querySelector('.pause');
 var forwardButton = document.querySelector(".forward");
 var nameOfSong= document.querySelector(".item3");
 var video = document.querySelector('#video');
@@ -18,6 +19,7 @@ const innerPoetry =document.querySelector('.inner');
 //Play current audio track
 function play() {
 	audio.load();
+	audio.currentTime=CURRENT;
 	audio.play();
 	
 	}
@@ -30,6 +32,14 @@ function playF() {
 //Stop playing audio
 function stop(){
 	audio.pause();
+	CURRENT=0;
+	audio.currentTime=CURRENT;
+	
+	
+}
+function pause(){
+	audio.pause();
+	CURRENT=audio.currentTime;
 	
 }
 // this highlight current playing song on a list of songs
@@ -121,6 +131,7 @@ playButton.addEventListener("click",playOn);
 
 stopButton.addEventListener("click",stop);
 
+pauseButton.addEventListener('click',pause);
 
 /*Handling Contact button*/
 var contact=document.querySelector("#contact");
@@ -251,6 +262,14 @@ function getCurrentTime(){
 }
 function handleTimeDisplay(fun){
 	let result=`${fun}`;
+	if(fun<10){
+		
+		result=`0:0${fun}`
+	}
+	if(fun>=10&&fun<60){
+		
+		result=`0:${fun}`
+	}
 	if(fun>=60&&fun<70){
 		fun=fun-60;
 		result=`1:0${fun}`
@@ -297,4 +316,39 @@ function handleTimeDisplay(fun){
  
  clock.innerText = getCurrentTime();
  setInterval(()=>clock.innerText=handleTimeDisplay(getCurrentTime()),1000);
-//ANIMATION ROTATE!!!
+//Handling rail
+const rect = document.querySelector('#rect');
+const rail = document.querySelector('#rail');		
+const rectX= parseInt(rect.getAttribute('x'));
+var duration =0;
+audio.addEventListener("loadedmetadata", function(_event) {
+    duration = audio.duration;
+});
+function move(){
+	const d = duration.toFixed(0);
+	const currentTime = parseInt(audio.currentTime.toFixed(0));
+	const position=currentTime/d;
+
+			
+	return position*280;
+}
+function moveToPosition(event){
+	if(!audio.paused){
+		audio.pause();
+	}
+	const position = showCoords(event);
+	const d = duration.toFixed(0);
+	console.log(d,position,(d*position)/285)
+	audio.currentTime=(d*position)/285;
+	CURRENT=(d*position)/285;
+
+
+}
+function showCoords(event){
+	let x = event.clientX;
+	console.log(x);
+	//137 this is difference in coordinates by full size
+	x-=rail.getBoundingClientRect().x;
+	return x;
+}
+setInterval(function(){return  rect.setAttribute('x',rectX+move())},1000);
