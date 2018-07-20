@@ -171,7 +171,7 @@ music.addEventListener('click', function(){
 	sideLeft.style.display='none';
 	poetry.style.display="none";
 	innerPoetry.style.display='none';
-	audioPlayer.style.display='block';
+	audioPlayer.style.display='inline-block';
 	audioPlayer2.style.display='flex';
 });	
 //Handling Home Button
@@ -341,6 +341,7 @@ function moveToPosition(event){
 	console.log(d,position,(d*position)/285)
 	audio.currentTime=(d*position)/285;
 	CURRENT=(d*position)/285;
+	play();
 
 
 }

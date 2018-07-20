@@ -261,6 +261,8 @@ a{
 /*=====================================PLAYER===========================================*/
 #audioPlayer{
 	display:none;/*block*/
+	text-align: center;
+	overflow-x:hidden;
 }
 
 .item1{
@@ -295,10 +297,15 @@ a{
 	grid-area:forwardButton;
 }
 #railbox{
-	
+	text-align: center;
 }
+.player::-webkit-scrollbar{
+		display:none;
+	} 
 .player{
 	clear:both;
+	overflow-x:scroll;
+	
 	display: grid;
 	grid-gap: 5px;
 	grid-template-areas: 
